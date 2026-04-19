@@ -1,13 +1,13 @@
 import React from "react";
-import hero from "../assets/hero.jpg";
+import heros from "../assets/heros.png";
 import Navbar from "./Navbar";
 
 export default function () {
   return (
     <div className="relative h-screen">
-      <img src={hero} alt="" className="w-full h-full object-cover object-top"/>
+      <img src={heros} alt="" className="w-full h-full object-cover object-top"/>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-black/50"></div>
 
       <div className="absolute top-0 left-0 w-full z-50">
         <Navbar />

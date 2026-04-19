@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="md:hidden text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>☰</div>
 
       {menuOpen && (
-        <ul className="absolute top-full w-64 left-0 bg-black  text-center py-6 space-y-4 md:hidden">
+        <ul className="absolute top-full right-0 px-8 py-6 bg-black  text-center space-y-4 md:hidden">
           <li className="hover:text-yellow-400 cursor-pointer">HOME</li>
           <li className="hover:text-yellow-400 cursor-pointer">ABOUT</li>
           <li className="hover:text-yellow-400 cursor-pointer">SERVICES</li>
