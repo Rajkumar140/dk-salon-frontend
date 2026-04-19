@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 export default function () {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen" style={{ backgroundImage: "url('/assets/hero.webp')" }}>
       <img src={hero} alt="" className="w-full h-full object-cover object-top"/>
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-black/50"></div>
