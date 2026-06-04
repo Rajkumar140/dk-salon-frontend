@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import hero from "../assets/hero.png";
 
-export default function Hero() {
+export default function Hero({ scrollToSection, refs }) {
+  const handleNavClick = (ref) => {
+    scrollToSection(ref);
+  };
+
   return (
     <div className="relative w-full min-h-screen">
       {/* Background Image */}
-      <img 
-        src={hero} 
-        alt="DK Salon barbershop interior" 
+      <img
+        src={hero}
+        alt="DK Salon barbershop interior"
         className="absolute inset-0 w-full h-full object-cover object-top"
       />
 
@@ -22,7 +26,8 @@ export default function Hero() {
         </div>
 
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
-          We Don't Just Cut Hair,<br />
+          We Don't Just Cut Hair,
+          <br />
           We Create Experiences
         </h1>
 
@@ -30,7 +35,10 @@ export default function Hero() {
           Professional barbershop experience with modern style.
         </p>
 
-        <button className="mt-6 rounded bg-red-500 px-6 py-3 w-fit hover:bg-yellow-400 hover:text-gray-800 transform hover:scale-105 active:scale-95 transition duration-300 shadow-lg hover:shadow-yellow-500/50">
+        <button
+          onClick={() => handleNavClick(refs.serviceRef)}
+          className="font-semibold text-lg mt-6 bg-red-600 active:scale-95 duration-300 hover:bg-red-700 px-6 py-3 w-fit rounded text-white"
+        >
           See Our Services
         </button>
       </div>

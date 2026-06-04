@@ -1,37 +1,53 @@
 import React, { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ scrollToSection, refs }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navLinks = ["HOME", "ABOUT", "SERVICES", "GALLERY", "CONTACT"];
+  const navLinks = [
+    { name: "Home", ref: refs.homeRef },
+    { name: "About", ref: refs.aboutRef },
+    { name: "Service", ref: refs.serviceRef },
+    { name: "Gallery", ref: refs.galleryRef },
+  ];
+
+  const handleNavClick = (ref) => {
+    scrollToSection(ref);
+    setMenuOpen(false);
+  };
 
   return (
-    <nav className="sticky top-0 z-50 bg-black shadow-black/20 shadow-xl flex justify-between items-center px-8 py-4 text-white">
+    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-8 py-2 text-white border-b border-gray-700/30">
       {/* Logo Section */}
-      <div>
-        <h1 className="text-2xl font-bold text-yellow-400 cursor-pointer">
-          DK SALON
-        </h1>
-        <p className="text-[13px] font-semibold cursor-pointer">
-          Haircut | Styling
-        </p>
+      <div
+        className="cursor-pointer"
+        onClick={() => scrollToSection(refs.homeRef)}
+      >
+        <h1 className="text-2xl font-bold text-yellow-400">DK SALON</h1>
+        <p className="text-[13px] font-semibold">Haircut | Styling</p>
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex gap-8">
+      <ul className="hidden md:flex gap-10 items-center">
         {navLinks.map((link) => (
           <li
-            key={link}
-            className="hover:text-yellow-400 transition duration-300 cursor-pointer font-semibold text-sm"
+            key={link.name}
+            onClick={() => handleNavClick(link.ref)}
+            className="transition duration-300 cursor-pointer font-semibold text-lg hover:text-yellow-400"
           >
-            {link}
+            {link.name}
           </li>
         ))}
+        <li
+          onClick={() => handleNavClick(refs.contactRef)}
+          className="text-lg bg-red-600 px-6 py-1 cursor-pointer hover:bg-red-700 active:scale-95 duration-300 font-semibold transition rounded"
+        >
+          Contact
+        </li>
       </ul>
 
       {/* Mobile Menu Button */}
       <button
         type="button"
-        className="md:hidden bg-red-500 px-4 py-2 rounded hover:bg-yellow-400 hover:text-gray-800 transform hover:scale-105 active:scale-95 transition duration-300 shadow-lg hover:shadow-yellow-500/50 font-bold text-lg"
+        className="md:hidden bg-red-600 px-3 py-2 hover:bg-yellow-400 transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -39,15 +55,15 @@ export default function Navbar() {
         {menuOpen ? "✕" : "☰"}
       </button>
 
-      {/* Mobile Overlay Backdrop - Closes menu when clicked */}
+      {/* Mobile Overlay Backdrop */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black/60 md:hidden z-40 transition-opacity duration-300"
+          className="fixed inset-0 md:hidden z-40 transition-opacity duration-300"
           onClick={() => setMenuOpen(false)}
         />
       )}
 
-      {/* Mobile Menu - Full Width Dropdown */}
+      {/* Mobile Menu */}
       <ul
         className={`absolute top-full left-0 right-0 md:hidden bg-black/95 backdrop-blur-sm shadow-2xl transform transition-all duration-300 ease-in-out z-50
           ${
@@ -57,16 +73,25 @@ export default function Navbar() {
           }`}
       >
         {navLinks.map((link) => (
-          <li key={link}>
+          <li key={link.name}>
             <button
               type="button"
-              onClick={() => setMenuOpen(false)}
-              className="w-full px-8 py-4 text-left text-white hover:bg-yellow-400/20 hover:text-yellow-400 transition duration-200 font-semibold text-lg border-b border-gray-700/50 last:border-b-0"
+              onClick={() => handleNavClick(link.ref)}
+              className="w-full px-8 py-4 text-left transition duration-200 font-semibold text-lg border-b border-gray-700/50 last:border-b-0 text-white hover:bg-yellow-400/20 hover:text-yellow-400"
             >
-              {link}
+              {link.name}
             </button>
           </li>
         ))}
+        <li>
+          <button
+            type="button"
+            onClick={() => handleNavClick(refs.contactRef)}
+            className="w-fit px-8 py-4 text-left transition active:scale-95 duration-300 font-semibold text-lg border-b border-gray-700/50 text-white hover:bg-yellow-400/20 hover:text-yellow-400"
+          >
+            Contact
+          </button>
+        </li>
       </ul>
     </nav>
   );

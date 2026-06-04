@@ -1,15 +1,53 @@
+import { useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import "./App.css";
 
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const serviceRef = useRef(null);
+  const galleryRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <>
-      <div className="text-white">
-        <Navbar />
-        <Hero />
+    <div className="text-white bg-black scroll-smooth">
+      <Navbar
+        scrollToSection={scrollToSection}
+        refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }}
+      />
+
+      <div ref={homeRef}>
+        <Hero
+          scrollToSection={scrollToSection}
+          refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }}
+        />
       </div>
-    </>
+
+      <div ref={aboutRef}>
+        <About scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }} />
+      </div>
+
+      <div ref={serviceRef}>
+        <Services scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }} />
+      </div>
+
+      <div ref={galleryRef}>
+        <Gallery scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }} />
+      </div>
+
+      <div ref={contactRef}>
+        <Contact scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, serviceRef, galleryRef, contactRef }} />
+      </div>
+    </div>
   );
 }
 
