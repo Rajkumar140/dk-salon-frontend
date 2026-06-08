@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import address from "../assets/address.png";
 import clock from "../assets/clock.png";
+import email from "../assets/email.png";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -86,8 +87,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <div className="text-3xl">🖂</div>
+            <div className="flex gap-4 space-y-[-3px]">
+              <div>
+                <img src={email} alt="Email" className="w-8 h-8" />
+              </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
                 <p className="text-gray-300">dksalon.co.in@gmail.com</p>
