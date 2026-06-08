@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import address from "../assets/address.png";
+import clock from "../assets/clock.png";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,11 +18,29 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for reaching out! We'll contact you soon.");
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // important
+
+    const response = await fetch("https://formspree.io/f/mjgdwgqy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+    } else {
+      alert("Error sending message");
+    }
   };
 
   return (
@@ -43,20 +63,22 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="flex gap-4">
-              <div className="text-3xl">📍</div>
+            <div className="flex gap-4 space-y-[-8px]">
+              <div>
+                <img src={address} alt="Address" className="w-8 h-8" />
+              </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Address</h3>
                 <p className="text-gray-300">
-                  123 Main Street
+                  427, Puthupet Main Road, Puthupet
                   <br />
-                  Your City, ST 12345
+                  Cuddalore, ST 607 108
                 </p>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <div className="text-3xl">📞</div>
+              <div className="text-3xl">☏</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Phone</h3>
                 <p className="text-gray-300">+91 8825520336</p>
@@ -65,15 +87,17 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <div className="text-3xl">✉️</div>
+              <div className="text-3xl">🖂</div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
                 <p className="text-gray-300">dksalon.co.in@gmail.com</p>
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <div className="text-3xl">🕐</div>
+            <div className="flex gap-4 space-y-[-3px]">
+              <div>
+                <img src={clock} alt="Hours" className="w-8 h-8" />
+              </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Hours</h3>
                 <p className="text-gray-300">
@@ -164,7 +188,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-red-600 hover:bg-red-600/70 active:scale-95 duration-300 px-6 py-3 font-bold text-lg transition rounded"
+              className="w-full bg-red-600 hover:bg-red-700 active:scale-95 duration-300 px-6 py-3 font-bold text-lg transition rounded"
             >
               Send Message
             </button>

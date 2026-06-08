@@ -8,7 +8,7 @@ import premiumfade from "../assets/premiumfade.jpg";
 import grooming from "../assets/grooming.jpg";
 import styletrends from "../assets/styletrends.jpg";
 
-export default function Gallery() {
+export default function Gallery({ scrollToSection, refs }) {
   const galleryImages = [
     { id: 1, title: "Classic Fade", category: "Haircut", image: classicfade },
     { id: 2, title: "Modern Cut", category: "Haircut", image: moderncut },
@@ -19,6 +19,10 @@ export default function Gallery() {
     { id: 7, title: "Grooming", category: "Beard", image: grooming },
     { id: 8, title: "Style Trends", category: "Coloring", image: styletrends },
   ];
+
+  const handleNavClick = (ref) => {
+    scrollToSection(ref);
+  };
 
   return (
     <section className="py-20 px-6 md:px-20 bg-gray-950 text-white">
@@ -54,7 +58,10 @@ export default function Gallery() {
               {/* Overlay on Hover */}
               <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col items-center justify-center">
                 <h3 className="text-xl font-bold mb-2 ">{image.title}</h3>
-                <span className="bg-red-600 px-4 py-1 text-sm font-semibold rounded">
+                <span
+                  onClick={() => handleNavClick(refs.contactRef)}
+                  className="bg-red-600 px-4 py-1 text-sm font-semibold rounded active:scale-95 transition duration-300 hover:bg-red-700"
+                >
                   {image.category}
                 </span>
               </div>
