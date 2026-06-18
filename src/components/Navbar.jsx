@@ -16,7 +16,7 @@ export default function Navbar({ scrollToSection, refs }) {
   };
 
   return (
-    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-6 py-4 text-white border-b border-gray-700/30">
+    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-4 py-2 text-white border-b border-gray-700/30">
       {/* Logo Section */}
       <div
         className="cursor-pointer flex items-center"
@@ -81,7 +81,7 @@ export default function Navbar({ scrollToSection, refs }) {
             <button
               type="button"
               onClick={() => handleNavClick(link.ref)}
-              className="w-full px-8 py-4 text-left transition duration-200 font-semibold text-lg border-b border-gray-700/50 last:border-b-0 text-white hover:bg-yellow-400/20 hover:text-yellow-400"
+              className="w-full px-10 py-6 text-left transition duration-200 font-semibold text-lg border-b border-gray-700/50 last:border-b-0 text-white hover:bg-yellow-400/20 hover:text-yellow-400"
             >
               {link.name}
             </button>
