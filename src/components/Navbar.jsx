@@ -16,7 +16,7 @@ export default function Navbar({ scrollToSection, refs }) {
   };
 
   return (
-    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-6 py-2 text-white border-b border-gray-700/30">
+    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-6 py-4 text-white border-b border-gray-700/30">
       {/* Logo Section */}
       <div
         className="cursor-pointer flex items-center"
