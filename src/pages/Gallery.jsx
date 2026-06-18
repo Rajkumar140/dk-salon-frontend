@@ -75,10 +75,10 @@ export default function Gallery({ scrollToSection, refs }) {
             Follow us on social media for more updates and gallery posts
           </p>
           <div className="flex justify-center gap-4">
-            <button className="bg-gray-700 hover:bg-red-600 px-6 py-2 font-semibold active:scale-95 transition duration-300 rounded">
+            <button className="bg-red-600 hover:bg-red-700 active:scale-95 px-6 py-2 font-semibold active:scale-95 transition duration-300 rounded">
               Facebook
             </button>
-            <button className="bg-gray-700 hover:bg-red-600 px-6 py-2 font-semibold active:scale-95 transition duration-300 rounded">
+            <button className="bg-red-600 hover:bg-red-700 active:scale-95 px-6 py-2 font-semibold active:scale-95 transition duration-300 rounded">
               Instagram
             </button>
           </div>

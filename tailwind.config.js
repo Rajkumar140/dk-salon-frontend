@@ -5,7 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        cinzel: ['Cinzel', 'serif'],
+        blackops: ['"Black Ops One"', 'system-ui'],
+      }
+    },
   },
   plugins: [],
 }

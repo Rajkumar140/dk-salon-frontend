@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../assets/logo.png";
 
 export default function Navbar({ scrollToSection, refs }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,11 +19,14 @@ export default function Navbar({ scrollToSection, refs }) {
     <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-8 py-2 text-white border-b border-gray-700/30">
       {/* Logo Section */}
       <div
-        className="cursor-pointer"
+        className="cursor-pointer flex items-center"
         onClick={() => scrollToSection(refs.homeRef)}
       >
-        <h1 className="text-2xl font-bold text-yellow-400">DK SALON</h1>
-        <p className="text-[13px] font-semibold">Haircut | Styling</p>
+        <img src={logo} className=" h-14" />
+        <div className="flex flex-col">
+          <h1 className="text-3xl font-blackops text-yellow-400">DK SALON</h1>
+          <p className="text-[13px] font-semibold -mt-2">Haircut | Styling</p>
+        </div>
       </div>
 
       {/* Desktop Menu */}

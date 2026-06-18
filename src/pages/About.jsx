@@ -1,5 +1,8 @@
 import React from "react";
 import salonimage from "../assets/salonimage.jpg";
+import quality from "../assets/quality.png";
+import community from "../assets/community.png";
+import integrity from "../assets/Integrity.png";
 
 export default function About({ scrollToSection, refs }) {
   const handleNavClick = (ref) => {
@@ -108,18 +111,18 @@ export default function About({ scrollToSection, refs }) {
             Our Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl mb-3">⭐</div>
+            <div className="text-center flex flex-col items-center">
+              <div className="mb-3"><img src={quality} className=""/></div>
               <h3 className="text-xl font-bold mb-2">Quality</h3>
               <p className="text-gray-300">Excellence in every cut</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-3">⭐</div>
+            <div className="text-center flex flex-col items-center">
+              <div className="mb-3"><img src={community} className="" /></div>
               <h3 className="text-xl font-bold mb-2">Community</h3>
               <p className="text-gray-300">Building relationships daily</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-3">⭐</div>
+            <div className="text-center flex flex-col items-center">
+              <div className="mb-3"><img src={integrity} className="w-[50px] h-[50px]" /></div>
               <h3 className="text-xl font-bold mb-2">Integrity</h3>
               <p className="text-gray-300">Honest service always</p>
             </div>
