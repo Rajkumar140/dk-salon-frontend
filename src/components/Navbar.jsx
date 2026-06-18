@@ -22,10 +22,10 @@ export default function Navbar({ scrollToSection, refs }) {
         className="cursor-pointer flex items-center"
         onClick={() => scrollToSection(refs.homeRef)}
       >
-        <img src={logo} className="md:h-14 h-8" />
+        <img src={logo} className="md:h-14 h-9" />
         <div className="flex flex-col">
-          <h1 className="text-lg md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
-          <p className="text-[7px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
+          <h1 className="text-xl md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
+          <p className="text-[8px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
         </div>
       </div>
 
