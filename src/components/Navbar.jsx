@@ -16,16 +16,16 @@ export default function Navbar({ scrollToSection, refs }) {
   };
 
   return (
-    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-8 py-2 text-white border-b border-gray-700/30">
+    <nav className="sticky top-0 bg-black z-50 flex justify-between items-center px-6 py-2 text-white border-b border-gray-700/30">
       {/* Logo Section */}
       <div
         className="cursor-pointer flex items-center"
         onClick={() => scrollToSection(refs.homeRef)}
       >
-        <img src={logo} className=" h-14" />
+        <img src={logo} className="md:h-14 h-12" />
         <div className="flex flex-col">
-          <h1 className="text-3xl font-blackops text-yellow-400">DK SALON</h1>
-          <p className="text-[13px] font-semibold -mt-2">Haircut | Styling</p>
+          <h1 className="text-xl md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
+          <p className="text-[8px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
         </div>
       </div>
 
