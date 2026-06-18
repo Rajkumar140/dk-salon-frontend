@@ -2,7 +2,7 @@ import React from "react";
 import salonimage from "../assets/salonimage.jpg";
 import quality from "../assets/quality.png";
 import community from "../assets/community.png";
-import integrity from "../assets/Integrity.png";
+import integrity from "../assets/integrity.png";
 
 export default function About({ scrollToSection, refs }) {
   const handleNavClick = (ref) => {
