@@ -51,7 +51,7 @@ export default function Navbar({ scrollToSection, refs }) {
       {/* Mobile Menu Button */}
       <button
         type="button"
-        className=" md:hidden px-3 py-1 text-white transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
+        className=" md:hidden px-3 py-2 text-white transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
