@@ -22,10 +22,10 @@ export default function Navbar({ scrollToSection, refs }) {
         className="cursor-pointer flex items-center"
         onClick={() => scrollToSection(refs.homeRef)}
       >
-        <img src={logo} className="md:h-14 h-12" />
+        <img src={logo} className="md:h-14 h-8" />
         <div className="flex flex-col">
-          <h1 className="text-xl md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
-          <p className="text-[8px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
+          <h1 className="text-lg md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
+          <p className="text-[7px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Navbar({ scrollToSection, refs }) {
       {/* Mobile Menu Button */}
       <button
         type="button"
-        className="rounded md:hidden bg-red-600 px-3 py-1 hover:bg-yellow-400 transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
+        className=" md:hidden px-3 py-1 text-white transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -69,7 +69,7 @@ export default function Navbar({ scrollToSection, refs }) {
 
       {/* Mobile Menu */}
       <ul
-        className={`absolute top-full left-0 right-0 md:hidden bg-black/95 backdrop-blur-sm shadow-2xl transform transition-all duration-300 ease-in-out z-50
+        className={`absolute top-full left-0 right-0 md:hidden backdrop-blur-sm shadow-2xl transform transition-all duration-300 ease-in-out z-50
           ${
             menuOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
