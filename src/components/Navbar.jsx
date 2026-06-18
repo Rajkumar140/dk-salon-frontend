@@ -22,10 +22,10 @@ export default function Navbar({ scrollToSection, refs }) {
         className="cursor-pointer flex items-center"
         onClick={() => scrollToSection(refs.homeRef)}
       >
-        <img src={logo} className="md:h-14 h-9" />
+        <img src={logo} className="md:h-14 h-10" />
         <div className="flex flex-col">
-          <h1 className="text-xl md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
-          <p className="text-[8px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
+          <h1 className="text-2xl md:text-3xl font-blackops text-yellow-400">DK SALON</h1>
+          <p className="text-[10px] md:text-[13px] font-semibold -mt-2">Haircut | Styling</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Navbar({ scrollToSection, refs }) {
       {/* Mobile Menu Button */}
       <button
         type="button"
-        className=" md:hidden px-3 py-2 text-white transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
+        className=" md:hidden px-6 py-4 text-white transform hover:scale-105 active:scale-95 transition duration-300 font-bold text-lg"
         aria-label="Toggle menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen(!menuOpen)}
