@@ -9,6 +9,16 @@ Frontend:
 - Tailwind CSS
 - JavaScript
 
+Backend:
+- Java
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- REST API
+
+DataBase:
+- MySQL
+
 Features
 - Responsive design (Mobile & Desktop)
 - Smooth scrolling navigation
