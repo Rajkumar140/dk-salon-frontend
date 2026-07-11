@@ -1,6 +1,7 @@
 DK Salon Website
 
 Project Overview
+
 This is a full-stack salon website developed for a local shop in my hometown as a freelance project. It allows users to explore services and contact the salon easily.
 
 Technologies Used
