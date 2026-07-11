@@ -8,16 +8,6 @@ Frontend:
 - React
 - Tailwind CSS
 - JavaScript
-  
-Backend:
-- Java
-- Spring Boot
-- Spring Data JPA
-- Hibernate
-- REST API
-  
-Database:
-- MySQL
 
 Features
 - Responsive design (Mobile & Desktop)
