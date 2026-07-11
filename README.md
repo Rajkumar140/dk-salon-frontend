@@ -12,8 +12,9 @@ Frontend:
 Backend:
 - Java
 - Spring Boot
-- REST API
+- Spring Data JPA
 - Hibernate
+- REST API
   
 Database:
 - MySQL
@@ -40,6 +41,6 @@ Setup Instructions
 2. Run `npm install`  
 3. Run `npm run dev`
 
-## 🔥 Key Highlight
+Key Highlight
 - Integrated with backend API
 - Dual API concept (Spring Boot + Formspree)
