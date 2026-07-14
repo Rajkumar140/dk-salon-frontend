@@ -30,7 +30,7 @@ export default function Contact() {
     };
 
     try {
-      const backendResponse = await fetch("http://localhost:8081/contact", {
+      const backendResponse = await fetch("http://localhost:8083/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,6 +41,7 @@ export default function Contact() {
       const emailResponse = await fetch("https://formspree.io/f/mjgdwgqy", {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
           "Accept": "application/json",
         },
         body: JSON.stringify(data),
