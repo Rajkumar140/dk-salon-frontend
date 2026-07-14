@@ -20,27 +20,47 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // important
+    e.preventDefault();
 
-    const response = await fetch("https://formspree.io/f/mjgdwgqy", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
 
-    if (response.ok) {
-      alert("Message sent successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
+    try {
+      const backendResponse = await fetch("http://localhost:8081/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       });
-    } else {
-      alert("Error sending message");
+
+      const emailResponse = await fetch("https://formspree.io/f/mjgdwgqy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        alert("Error sending message");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server error");
     }
   };
 
