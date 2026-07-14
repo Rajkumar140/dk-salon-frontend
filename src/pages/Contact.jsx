@@ -41,13 +41,13 @@ export default function Contact() {
       const emailResponse = await fetch("https://formspree.io/f/mjgdwgqy", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        alert("Message sent successfully!");
+      if (backendResponse.ok && emailResponse.ok) {
+        alert("Message sent successfully");
         setFormData({
           name: "",
           email: "",
