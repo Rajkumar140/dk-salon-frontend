@@ -30,7 +30,7 @@ export default function Contact() {
     };
 
     try {
-      const backendResponse = await fetch("http://localhost:8083/contact", {
+      const backendResponse = await fetch("https://dk-salon-backend.onrender.com/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
